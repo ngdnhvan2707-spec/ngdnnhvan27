@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Đăng Ký - FitTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+<header>
+  <div class="container navbar">
+    <div class="logo">
+      <div class="logo-box">FG</div>
+      <h2>FITTRACK</h2>
+    </div>
+    <nav>
+      <a href="index.html">🏠 Trang Chủ</a>
+      <a href="history.html">📊 Lịch Sử Tập</a>
+      <a href="admin.html">⚙️ Quản Trị</a>
+      <a href="login.html">🔐 Đăng Nhập</a>
+      <a class="active" href="register.html">✍️ Đăng Ký</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container-auth">
+    <div class="brand-panel">
+      <h2>Bắt đầu hành trình của bạn</h2>
+      <p>Thiết lập tài khoản để lưu lịch tập, thống kê và cá nhân hóa trải nghiệm của bạn.</p>
+      <p class="small">Đã có tài khoản? <a href="login.html" class="switch-link">Đăng nhập</a></p>
+    </div>
+    <div class="form-panel">
+      <h3>Tạo tài khoản</h3>
+      <div class="auth-grid">
+        <div>
+          <div class="label">Họ & Tên</div>
+          <input id="fullname" class="input" type="text" placeholder="Nguyễn Văn A">
+        </div>
+        <div>
+          <div class="label">Email</div>
+          <input id="regEmail" class="input" type="email" placeholder="you@example.com">
+        </div>
+        <div>
+          <div class="label">Mật khẩu</div>
+          <input id="regPass" class="input" type="password" placeholder="Mật khẩu">
+        </div>
+        <div>
+          <div class="label">Xác nhận mật khẩu</div>
+          <input id="regPass2" class="input" type="password" placeholder="Nhập lại mật khẩu">
+        </div>
+        <div class="error" id="regError" style="display:none"></div>
+        <div class="actions">
+          <button id="registerBtn" class="btn btn-primary">Tạo tài khoản</button>
+          <a href="index.html" class="btn btn-outline">Quay Lại</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="auth.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

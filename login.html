@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Đăng Nhập - FitTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+<header>
+  <div class="container navbar">
+    <div class="logo">
+      <div class="logo-box">FG</div>
+      <h2>FITTRACK</h2>
+    </div>
+    <nav>
+      <a href="index.html">🏠 Trang Chủ</a>
+      <a href="history.html">📊 Lịch Sử Tập</a>
+      <a href="admin.html">⚙️ Quản Trị</a>
+      <a class="active" href="login.html">🔐 Đăng Nhập</a>
+      <a href="register.html">✍️ Đăng Ký</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container-auth">
+    <div class="brand-panel">
+      <h2>Chào mừng đến với FitTrack</h2>
+      <p>Ghi lại buổi tập, theo dõi tiến bộ và đạt mục tiêu của bạn. Đăng nhập để tiếp tục.</p>
+      <p class="small">Bạn mới sử dụng? <a href="register.html" class="switch-link">Tạo tài khoản ngay</a></p>
+    </div>
+    <div class="form-panel">
+      <h3>Đăng Nhập</h3>
+      <div class="auth-grid">
+        <div>
+          <div class="label">Email</div>
+          <input id="email" class="input" type="email" placeholder="you@example.com">
+        </div>
+        <div>
+          <div class="label">Mật khẩu</div>
+          <input id="password" class="input" type="password" placeholder="Mật khẩu">
+        </div>
+        <div class="error" id="loginError" style="display:none"></div>
+        <div class="actions">
+          <button id="loginBtn" class="btn btn-primary">Đăng Nhập</button>
+          <a href="index.html" class="btn btn-outline">Quay Lại</a>
+        </div>
+        <div class="small">Quên mật khẩu? <span class="switch-link" id="forgot">Khôi phục</span></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="auth.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

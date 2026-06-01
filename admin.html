@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style2.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="container navbar">
+
+      <div class="logo">
+
+        <div class="logo-box">
+          FG
+        </div>
+
+        <h2>FITTRACK</h2>
+
+      </div>
+
+      <nav>
+
+        <a href="index.html">
+          🏠 Trang Chủ
+        </a>
+
+        <a href="history.html">
+          📊 Lịch Sử Tập
+        </a>
+
+        <a class="active" href="admin.html">
+          ⚙️ Quản Trị
+        </a>
+
+        <a href="login.html">
+          🔐 Đăng Nhập
+        </a>
+
+        <a href="register.html">
+          ✍️ Đăng Ký
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+<main class="container">
+<section class="hero">
+
+    <h1>Quản Trị Buổi Tập</h1>
+
+    <p>
+        Thêm, sửa và quản lý toàn bộ dữ liệu tập luyện
+    </p>
+
+</section>
+
+<section class="card">
+
+    <div class="card-header">
+
+        <h2>Thêm Buổi Tập Mới</h2>
+
+        <button
+            id="showFormBtn"
+            class="yellow-btn">
+
+            <i class="fa-solid fa-plus"></i>
+            Thêm Buổi Tập
+
+        </button>
+
+    </div>
+
+    <form
+        id="workoutForm"
+        class="workout-form hidden">
+
+        <div class="grid">
+
+            <div class="input-group">
+                <label>Tên Buổi Tập</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Ví dụ: Ngực - Tay Sau">
+            </div>
+
+            <div class="input-group">
+                <label>Ngày Tập</label>
+                <input
+                    type="date"
+                    id="date">
+            </div>
+
+            <div class="input-group">
+                <label>Loại Tập</label>
+
+                <select id="type">
+
+                    <option>Gym</option>
+                    <option>Cardio</option>
+                    <option>HIIT</option>
+                    <option>Yoga</option>
+                    <option>CrossFit</option>
+
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Cường Độ</label>
+
+                <select id="intensity">
+
+                    <option>Nhẹ</option>
+                    <option>Trung Bình</option>
+                    <option>Nặng</option>
+
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Thời Gian (phút)</label>
+
+                <input
+                    type="number"
+                    id="duration">
+            </div>
+
+            <div class="input-group">
+                <label>Calories</label>
+
+                <input
+                    type="number"
+                    id="calories">
+            </div>
+
+            <div class="input-group">
+                <label>Số Set</label>
+
+                <input
+                    type="number"
+                    id="sets">
+            </div>
+
+            <div class="input-group">
+                <label>Số Rep</label>
+
+                <input
+                    type="number"
+                    id="reps">
+            </div>
+
+            <div class="input-group full">
+
+                <label>Ghi Chú</label>
+
+                <textarea
+                    id="note"
+                    placeholder="Nhập ghi chú...">
+                </textarea>
+
+            </div>
+
+        </div>
+
+        <div class="form-actions">
+
+            <button
+                type="button"
+                id="saveBtn"
+                class="yellow-btn">
+
+                Lưu Buổi Tập
+
+            </button>
+
+            <button
+                type="button"
+                id="cancelBtn"
+                class="gray-btn">
+
+                Hủy
+
+            </button>
+
+        </div>
+
+    </form>
+
+</section>
+
+<section class="toolbar">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Tìm kiếm buổi tập...">
+
+    <select id="filterType">
+
+        <option value="">
+            Tất cả loại
+        </option>
+
+    </select>
+
+    <select id="filterIntensity">
+
+        <option value="">
+            Tất cả cường độ
+        </option>
+
+        <option value="Nhẹ">
+            Nhẹ
+        </option>
+
+        <option value="Trung Bình">
+            Trung Bình
+        </option>
+
+        <option value="Nặng">
+            Nặng
+        </option>
+
+    </select>
+
+</section>
+
+<section class="card">
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>Buổi Tập</th>
+                <th>Ngày</th>
+                <th>Loại</th>
+                <th>Cường Độ</th>
+                <th>Thời Gian</th>
+                <th>Calories</th>
+                <th>Thao Tác</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody id="tableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+</main>
+
+<footer>
+    <div class="container footer-grid">
+
+      <div>
+
+        <div class="footer-title">
+          FITTRACK
+        </div>
+
+        <div class="footer-text">
+          Nền tảng fitness hiện đại giúp bạn theo dõi toàn bộ quá trình luyện tập mỗi ngày.
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="footer-title">
+          Truy Cập
+        </div>
+
+        <div class="footer-links">
+
+          <a href="index.html">Trang Chủ</a>
+          <a href="history.html">Lịch Tập</a>
+          <a href="admin.html">Quản Trị</a>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="footer-title">
+          Liên Hệ
+        </div>
+
+        <div class="footer-links">
+
+          <a href="#">Hà Nội, Việt Nam</a>
+          <a href="#">fittrack@gmail.com</a>
+          <a href="#">+84 123 456 789</a>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="copyright">
+      © 2026 FITTRACK — Theo dõi luyện tập hiệu quả
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="admin.js"></script>
+<script>
+  if (typeof window.saveWorkout === 'undefined') {
+    fetch('admin.js')
+      .then(response => response.text())
+      .then(text => new Function(text)())
+      .catch(err => console.error('Fallback admin.js failed:', err));
+  }
+</script>
+</body>
+</html>  
